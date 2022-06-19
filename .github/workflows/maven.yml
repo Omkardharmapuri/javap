@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v3
@@ -29,8 +29,8 @@ jobs:
     - name: Upload artifact for deployment job
       uses: actions/upload-artifact@v3
       with:
-        name: java-app
-        path: '/home/runner/work/javap/javap*.jar'
+        name: app
+        path: '~/javap*.jar'
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
