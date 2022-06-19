@@ -50,3 +50,7 @@ jobs:
         key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         source: '/home/runner/work/javap/javap*.jar'
         target: "/tmp"
+		
+		
+		
+		/home/ubuntu/javap/_work/javap/javap
