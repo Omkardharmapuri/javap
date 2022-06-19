@@ -26,4 +26,17 @@ jobs:
       run: mvn clean test
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Upload artifact for deployment job
+      uses: actions/upload-artifact@v3
+      with:
+        name: java-app
+        path: '${{ github.workspace }}/target/*.jar'
+
+#  Deploy:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - uses: actions/checkout@v3
+#      name: copying artifact
+#      run: scp ${{ github.workspace }}/target/*.jar ssh
     
