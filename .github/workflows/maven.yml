@@ -43,5 +43,5 @@ jobs:
         host: ec2-13-235-31-151.ap-south-1.compute.amazonaws.com
         username: ${{ secrets.AWS_ACCESS_KEY_ID }}
         key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        source: "/home/runner/work/javap/javap/target/demo-0.0.1-SNAPSHOT.jar"
-        target: "~/etc"
+        source: '${{ github.workspace }}/target/*.jar'
+        target: "/tmp"
