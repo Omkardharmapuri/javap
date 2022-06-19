@@ -30,18 +30,16 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: java-app
-        path: '${{ github.workspace }}/target/*.jar'
+        path: '/home/runner/work/javap/javap*.jar'
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2    
+    steps:  
     - name: Upload Files
       uses: siva1024/scp-deployer@latest
       with:
         host: ec2-13-235-31-151.ap-south-1.compute.amazonaws.com
         username: ${{ secrets.AWS_ACCESS_KEY_ID }}
         key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        source: '${{ github.workspace }}/target/*.jar'
+        source: '/home/runner/work/javap/javap*.jar'
         target: "/tmp"
